@@ -1,0 +1,51 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+    Remplissez la fiche bateau
+  </div>
+  <div class="panel-body">
+    <div class="container-fluid">
+      <%= form_for @boat, html: {multipart: true} do |f| %>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label> Nom du bateau</label>
+            <%= f.text_field :name, placeholder: "Serenade..", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Pays</label>
+            <%= f.text_field :country, placeholder: "Egypte..", class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Trajet</label>
+            <%= f.text_field :itinerary, placeholder: "Louxor-Assouan-Louxor", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+       <div class="col-md-6">
+        <div class="form-group">
+          <label>Type de pension</label>
+            <%= f.select :board, ["All-inclusive", "Pension complète", "Demi-pension", "Petit-déjeuner"], prompt: "A sélectionner...", class: "form-control" %>
+        </div>
+      </div>
+                <div class="form-group">
+                  <div class="col-md-6">
+            <label>Prix à partir de</label>
+            <%= f.text_field :price, placeholder: "30", class: "form-control" %>
+          </div>
+          </div>
+    </div>
+      <div class="actions">
+      <%= f.submit "Créer le bateau", class: 'btn btn-md btn-danger' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>

@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+
+  resources :boats
+
   devise_for :users
 
 resources :posts

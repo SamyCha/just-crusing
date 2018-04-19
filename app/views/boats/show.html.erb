@@ -1,0 +1,9 @@
+<h1><%= @boat.name %></h1>
+<p><%= @boat.country %></p>
+<p><%= @boat.itinerary %></p>
+<p><%= @boat.board %></p>
+<p>A partir de: <%= @boat.price %></p>
+<%= link_to 'Modifier le bateau', edit_boat_path %><br>
+<%= link_to 'Retour à la liste des bateaux', boats_path %><br>
+<%= link_to 'supprimer le bateau' , boat_path, method:  :delete %>
+
