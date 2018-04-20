@@ -3,7 +3,15 @@ class BoatsController < ApplicationController
   before_action :set_boat, only: %i[show edit update destroy]
 
   def index
-    @boats = Boat.all
+  #@boats = Boat.all
+    @boats = Boat.where.not(latitude: nil, longitude: nil)
+    @markers = @boats.map do |boat|
+      {
+        lat: boat.latitude,
+        lng: boat.longitude#,
+        # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
+      }
+    end
   end
 
   def show
@@ -41,7 +49,7 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:name, :itinerary, :country, :board, :price)
+    params.require(:boat).permit(:name, :itinerary, :country, :board, :price, :address, :description)
   end
 
 end

@@ -1,8 +1,10 @@
 <h1><%= @boat.name %></h1>
-<p><%= @boat.country %></p>
-<p><%= @boat.itinerary %></p>
-<p><%= @boat.board %></p>
-<p>A partir de: <%= @boat.price %></p>
+<p><strong>Pays:</strong> <%= @boat.country %></p>
+<p><strong>Port d'embarquement:</strong> <%= @boat.address %></p>
+<p><strong>Itniéraire:</strong> <%= @boat.itinerary %></p>
+<p><strong>Pension:</strong> <%= @boat.board %></p>
+<p><strong>A partir de: <%= @boat.price %>eur/nuit (minimum 7nuits)</strong></p>
+<p><strong>Description:</strong> <%= @boat.description %></p>
 <%= link_to 'Modifier le bateau', edit_boat_path %><br>
 <%= link_to 'Retour à la liste des bateaux', boats_path %><br>
 <%= link_to 'supprimer le bateau' , boat_path, method:  :delete %>
