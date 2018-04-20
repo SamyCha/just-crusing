@@ -1,4 +1,17 @@
+  <div class='blog'>
+  <div class='container'>
+  <div class='row text-center'>
+  <h1>Découvrir l'Egypte</h1>
+  <hr>
 <% @posts.each do |post| %>
-     <h1><%= link_to 'post.title', post %></h1>
-     <p><%= post.content %></p>
+<%=link_to post_path(post) do %>
+  <h3><%= post.title %></h3>
+  <% end %>
+  <%= image_tag post.image_url.to_s, width: '400px' %>
+  <p><%= post.content %></p>
+  <hr>
 <% end %>
+
+</div>
+</div>
+</div>

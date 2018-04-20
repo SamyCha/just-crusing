@@ -1,17 +1,20 @@
-<div class='container'>
+<div class='background'>
+<div class='container-fluid'>
+<div class='row'>
 <br>
 <br>
-<div class="col-xs-12 text-center">
+<div class="col-xs-8 text-center">
     <% @boats.each do |boat| %>
-    <div class="col-xs-12 col-sm-6 col-md-3">
+    <%= link_to boat do %>
+    <div class="col-xs-12 col-sm-6 col-md-4">
       <div class="panel panel-default box-shadow">
         <div class="panel-heading preview">
         à partir de: <%= boat.price %> eur/nuit
         </div>
         <div class="panel-body">
           <div class="col-xs-12 text-center">
-            <h5><%= link_to boat.name, boat %></h5><br>
-            <%= boat.board %>
+            <h5><%= boat.name %></h5>
+            <small><%= boat.board %></small>
             <hr>
           </div>
           <div class="row">
@@ -24,6 +27,11 @@
       </div>
     </div>
     <% end %>
+    <% end %>
   </div>
-  </div>
+  <div class="col-xs-4">
 
+  </div>
+  </div>
+  </div>
+</div>

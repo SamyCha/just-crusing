@@ -4,4 +4,6 @@ class Post < ApplicationRecord
 
   has_many :line_items, inverse_of: :order
 
+  mount_uploader :image, ImageUploader
+
 end

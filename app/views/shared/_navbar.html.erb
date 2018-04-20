@@ -1,20 +1,20 @@
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand" do %>
-    <%= image_tag "logo.png", height: 50 %>
+    <%= image_tag "logo.png", height: 50 %>Cruisin'Egypt
   <% end %>
 
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
-
-
-<%= link_to "Découvrir les sites", boats_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
+   <%= link_to "Découvrir l'Egypte", posts_path, class: "navbar-wagon-item navbar-wagon-link" %>
+   <%= link_to "Sélectionner votre croisière", boats_path, class: "navbar-wagon-item navbar-wagon-link" %>
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
+
+        <%= link_to "Ajouter un article au blog", new_post_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "Ajouter un bateau", new_boat_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "Découvrez les bateaux", boats_path, class: "navbar-wagon-item navbar-wagon-link" %>
+
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
