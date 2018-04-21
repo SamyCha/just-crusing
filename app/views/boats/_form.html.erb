@@ -38,23 +38,30 @@
        <div class="col-md-6">
         <div class="form-group">
           <label>Type de pension</label>
-            <%= f.select :board, ["All-inclusive", "Pension complète", "Demi-pension", "Petit-déjeuner"], prompt: "A sélectionner...", class: "form-control" %>
+          <%= f.select :board, ["All-inclusive", "Pension complète", "Demi-pension", "Petit-déjeuner"], prompt: "A sélectionner...", class: "form-control" %>
         </div>
       </div>
-                <div class="form-group">
-                  <div class="col-md-6">
-            <label>Prix à partir de</label>
-            <%= f.text_field :price, placeholder: "30", class: "form-control" %>
-          </div>
-          </div>
-                          <div class="form-group">
-                  <div class="col-md-12">
-            <label>Descriptif du bateau</label>
-            <%= f.text_field :description, placeholder: "super bateau...", class: "form-control" %>
-          </div>
-          </div>
+      <div class="form-group">
+        <div class="col-md-6">
+          <label>Prix à partir de</label>
+          <%= f.text_field :price, placeholder: "30", class: "form-control" %>
+        </div>
+      </div>
+      <div class="form-group">
+        <div class="col-md-12">
+          <label>Descriptif du bateau</label>
+          <%= f.text_area :description, placeholder: "super bateau...", size: "24x6",  class: "form-control" %>
+        </div>
+      </div>
     </div>
-      <div class="actions">
+    <br>
+    <div class="form-group">
+      <div class="col-md-12">
+        <label>Ajouter une photo</label>
+        <%= f.file_field :photo %><br>
+      </div>
+    </div>
+    <div class="actions">
       <%= f.submit "Créer le bateau", class: 'btn btn-md btn-danger' %>
     </div>
     <% end %>

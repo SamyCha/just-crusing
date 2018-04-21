@@ -19,6 +19,8 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'carrierwave'
 gem 'geocoder'
+gem 'cloudinary'
+
 
 group :development do
   gem 'web-console', '>= 3.3.0'

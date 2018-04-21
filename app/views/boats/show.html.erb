@@ -1,4 +1,5 @@
 <h1><%= @boat.name %></h1>
+<%= cl_image_tag @boat.photo, height: 300, width: 400, crop: :fill %>
 <p><strong>Pays:</strong> <%= @boat.country %></p>
 <p><strong>Port d'embarquement:</strong> <%= @boat.address %></p>
 <p><strong>Itniéraire:</strong> <%= @boat.itinerary %></p>

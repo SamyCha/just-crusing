@@ -4,10 +4,10 @@ class BoatsController < ApplicationController
 
   def index
   #@boats = Boat.all
-    @boats = Boat.where.not(latitude: nil, longitude: nil)
-    @markers = @boats.map do |boat|
-      {
-        lat: boat.latitude,
+  @boats = Boat.where.not(latitude: nil, longitude: nil)
+  @markers = @boats.map do |boat|
+    {
+      lat: boat.latitude,
         lng: boat.longitude#,
         # infoWindow: { content: render_to_string(partial: "/flats/map_box", locals: { flat: flat }) }
       }
@@ -15,6 +15,7 @@ class BoatsController < ApplicationController
   end
 
   def show
+
   end
 
   def new
@@ -49,7 +50,7 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:name, :itinerary, :country, :board, :price, :address, :description)
+    params.require(:boat).permit(:name, :itinerary, :country, :board, :price, :address, :description, :photo)
   end
 
 end
