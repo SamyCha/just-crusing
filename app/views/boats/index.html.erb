@@ -1,5 +1,13 @@
 <div class='background'>
-<div class='container-fluid'>
+<div class='container'>
+<div class='row'>
+<div class="col-xs-12 text-center">
+<br>
+SEARCH BAR
+<hr>
+</div>
+
+
 <div class='row'>
 <br>
 <br>
@@ -10,7 +18,8 @@
       <div class="panel panel-default box-shadow">
         <div class="panel-heading preview">
         à partir de: <%= boat.price %> eur/nuit
-        </div>
+        </div> <br>
+          <%= cl_image_tag boat.photo, height: 140, width: 200, crop: :fill %>
         <div class="panel-body">
           <div class="col-xs-12 text-center">
             <h5><%= boat.name %></h5>
@@ -30,7 +39,7 @@
     <% end %>
   </div>
   <div class="col-xs-4">
-<div id="map" style="width: 100%; height: 600px;" data-markers="<%= @markers.to_json %>"></div>
+<div id="map" style="width: 90%; height: 700px;" data-markers="<%= @markers.to_json %>"></div>
   </div>
   </div>
   </div>
