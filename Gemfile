@@ -20,6 +20,8 @@ gem 'webpacker'
 gem 'carrierwave'
 gem 'geocoder'
 gem 'cloudinary'
+gem 'redis'
+gem 'hiredis'
 
 
 group :development do

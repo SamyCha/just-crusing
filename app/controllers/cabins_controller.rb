@@ -18,6 +18,7 @@ class CabinsController < ApplicationController
   end
 
   def show
+    @cart_action = @cabin.cart_action current_user.try :id
   end
 
   def edit
@@ -28,6 +29,21 @@ class CabinsController < ApplicationController
 
   def destroy
   end
+
+
+def cart_action(current_user_id)
+  if $redis.sismember "cart#{current_user_id}", id
+    "Remove from"
+  else
+    "Add to"
+  end
+end
+
+
+
+
+
+
 
   private
   def set_cabin

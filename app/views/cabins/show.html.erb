@@ -1,2 +1,6 @@
-<h1>Cabins#show</h1>
-<p>Find me in app/views/cabins/show.html.erb</p>
+<%if signed_in?%>
+  <%=link_to "", class: "button", data: {target: @cart_action, addUrl: add_to_cart_path(@cabin), removeUrl: remove_from_cart_path(@cabin)} do%>
+    <i class="fi-shopping-cart"></i>
+    <span><%=@cart_action%></span> Cart
+  <%end%>
+<%end%>
