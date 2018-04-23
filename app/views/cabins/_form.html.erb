@@ -1,0 +1,50 @@
+<div class="panel panel-default">
+  <div class="panel-heading">
+    <i class="fa fa-plus-circle" aria-hidden="true"></i>
+    Remplissez la fiche cabine
+  </div>
+  <div class="panel-body">
+    <div class="container-fluid">
+      <%= form_for [@boat, @cabin], html: {multipart: true} do |f| %>
+      <div class="row">
+        <div class="col-md-2">
+          <div class="form-group">
+          <%= f.label :boat %><br />
+          <%= f.select :boat_id, options_for_select(Boat.all.map{|s|[s.name, s.id]}) %>
+        </div>
+        </div>
+        <div class="col-md-10">
+          <div class="form-group">
+            <label>Type de Cabine</label>
+            <%= f.text_field :type, placeholder: "Standard", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label>Taille de la Cabine</label>
+            <%= f.text_field :size, placeholder: "15m2", class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>Pont</label>
+            <%= f.text_field :deck, placeholder: "Pont Supérieur", class: "form-control" %>
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="form-group">
+            <label>Nombre de lit</label>
+            <%= f.text_field :bed, placeholder: "Chambre Twin", class: "form-control" %>
+          </div>
+        </div>
+      </div>
+    <br>
+    <div class="actions">
+      <%= f.submit "Créer la cabine", class: 'btn btn-md btn-danger' %>
+    </div>
+    <% end %>
+  </div>
+</div>
+</div>

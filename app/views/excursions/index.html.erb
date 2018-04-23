@@ -1,0 +1,8 @@
+<br>
+<% @excursions.each do |excursion| %>
+<ul>
+<li> <%= link_to excursion.name, excursion_path(excursion) %>  <%= excursion.interest %> <%= excursion.country %> <%= excursion.address %>
+</li>
+</ul>
+
+<% end %>

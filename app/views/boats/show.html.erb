@@ -8,5 +8,6 @@
 <p><strong>Description:</strong> <%= @boat.description %></p>
 <%= link_to 'Modifier le bateau', edit_boat_path %><br>
 <%= link_to 'Retour à la liste des bateaux', boats_path %><br>
-<%= link_to 'supprimer le bateau' , boat_path, method:  :delete %>
+<%= link_to 'supprimer le bateau' , boat_path, method:  :delete %><br>
+<%= link_to 'Créer un cabine', new_boat_cabin_path(@boat) %><br>
 
