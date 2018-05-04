@@ -20,6 +20,7 @@ gem 'webpacker'
 gem 'carrierwave'
 gem 'geocoder'
 gem 'cloudinary'
+gem 'omniauth-facebook'
 
 
 group :development do

@@ -6,7 +6,13 @@
         <h1>Cruisin'Egypt</h1>
         <p>Book the best cabin to enjoy your Nile River Cruise</p>
         <%= link_to boats_path, class: "btn btn-info" do %>
-          book your cabin
+        book your cabin
+        <% end %>
+        <% unless current_user %>
+        <%= link_to "Sign in with Facebook", user_facebook_omniauth_authorize_path %>
+        <% else %>
+        <%= current_user[:name] %>
+        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
         <% end %>
       </div>
     </div>
