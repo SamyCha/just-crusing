@@ -20,6 +20,7 @@ gem 'webpacker'
 gem 'carrierwave'
 gem 'geocoder'
 gem 'cloudinary'
+gem 'ransack'
 
 
 group :development do

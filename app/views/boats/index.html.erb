@@ -1,49 +1,61 @@
 <div class='background'>
-<div class='container'>
-<div class='row'>
-<div class="col-xs-12 text-center">
-<br>
-Période: <br>
-Cabine à partir de:
+  <div class='container'>
+    <div class='row'>
+      <div class="col-xs-12 text-center">
+        <br>
+        <div class='text-center', style='color: black'>
+          <%= search_form_for @search do |f| %>
+          <h4>Rechercher une croisière:</h4><br>
+          <%= f.label :country_cont, 'pays:' %>
+          <%= f.search_field :country_cont %>
+          <%= f.label :name_cont, 'nom bateau:' %>
+          <%= f.search_field :name_cont %>
+          <%= f.label :board_cont, 'pension:' %>
+          <%= f.search_field :board_cont %>
+          <br><br>          
+          <%= f.label :price_gteq, 'prix min:' %>
+          <%= f.number_field :price_gteq %>
+          <%= f.label :price_lteq, 'prix max:' %>
+          <%= f.number_field :price_lteq %>
+          <%= f.submit 'Lancer la recherche', class:'btn btn-info btn-sm' %><br>
+          <%= link_to "Toutes les croisières", boats_path %>
+          <% end %>
+        </div>
 
-<hr>
-</div>
-
-
-<div class='row'>
-<br>
-<br>
-<div class="col-xs-8 text-center">
-    <% @boats.each do |boat| %>
-    <%= link_to boat do %>
-    <div class="col-xs-12 col-sm-6 col-md-4">
-      <div class="panel panel-default box-shadow">
-        <div class="panel-heading preview">
-        à partir de: <%= boat.price %> eur/nuit
-        </div> <br>
-          <%= cl_image_tag boat.photo, height: 140, width: 200, crop: :fill %>
-        <div class="panel-body">
-          <div class="col-xs-12 text-center">
-            <h5><%= boat.name %></h5>
-            <small><%= boat.board %></small>
-            <span class="badge">cabines disponibles</span>
-            <hr>
-          </div>
-          <div class="row">
-            <div class="col-xs-12">
-              <strong><%= boat.itinerary %></strong>    <br>
-              <%= image_tag "logo.png", heigth:12, width: 22 %> <%= boat.country %>
+        <div class='row'>
+          <br>
+          <br>
+          <div class="col-xs-8 text-center box-shadow:hover">
+            <% @boats.each do |boat| %>
+            <%= link_to boat do %>
+            <div class="col-xs-12 col-sm-6 col-md-4">
+              <div class="panel panel-default box-shadow">
+                <div class="panel-heading preview">
+                  à partir de: <br><strong><%= boat.price %> eur/nuit</strong>
+                </div> <br>
+                <%= cl_image_tag boat.photo, height: 140, width: 200, crop: :fill %>
+                <div class="panel-body">
+                  <div class="col-xs-12 text-center">
+                    <h5><strong><%= boat.name %></strong></h5>
+                    <small><%= boat.board %></small>
+                    <span class="badge">cabines disponibles</span>
+                    <hr>
+                  </div>
+                  <div class="row">
+                    <div class="col-xs-12">
+                      <strong><%= boat.itinerary %></strong>    <br>
+                      <%= image_tag "logo.png", heigth:12, width: 22 %> <%= boat.country %>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
+            <% end %>
+            <% end %>
+          </div>
+          <div class="col-xs-4">
+            <div id="map" style="width: 90%; height: 700px;" data-markers="<%= @markers.to_json %>"></div>
           </div>
         </div>
       </div>
     </div>
-    <% end %>
-    <% end %>
-  </div>
-  <div class="col-xs-4">
-<div id="map" style="width: 90%; height: 700px;" data-markers="<%= @markers.to_json %>"></div>
-  </div>
-  </div>
-  </div>
-</div>

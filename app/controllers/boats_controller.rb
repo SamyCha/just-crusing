@@ -4,7 +4,10 @@ class BoatsController < ApplicationController
 
   def index
   #@boats = Boat.all
-  @boats = Boat.where.not(latitude: nil, longitude: nil)
+@search = Boat.ransack(params[:q])
+@boats = @search.result
+
+ # @boats = Boat.where.not(latitude: nil, longitude: nil)
   @markers = @boats.map do |boat|
     {
       lat: boat.latitude,
